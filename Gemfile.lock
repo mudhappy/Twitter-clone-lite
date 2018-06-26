@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/stympy/faker.git
+  revision: 38f04369bfa11e17cc34f13de3468b6ace371820
+  branch: master
+  specs:
+    faker (1.8.7)
+      i18n (>= 0.7)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -73,6 +81,7 @@ GEM
     erubi (1.7.1)
     execjs (2.7.0)
     ffi (1.9.25)
+    ffi (1.9.25-x86-mingw32)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     i18n (1.0.1)
@@ -96,6 +105,8 @@ GEM
     multi_json (1.13.1)
     nio4r (2.3.1)
     nokogiri (1.8.3)
+      mini_portile2 (~> 2.3.0)
+    nokogiri (1.8.3-x86-mingw32)
       mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
     public_suffix (3.0.2)
@@ -197,6 +208,7 @@ DEPENDENCIES
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
   devise
+  faker!
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   puma (~> 3.7)

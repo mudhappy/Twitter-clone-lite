@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-   resources :tweets 
+  devise_for :users
+  resources :users, only: [:show]
+  resources :tweets
 end
