@@ -1,0 +1,11 @@
+$('.tweet_alerts').html('');
+
+<% if @tweet.errors.any? %>
+  <% @tweet.errors.full_messages.each do |message| %>
+    $('.tweet_alerts').append("<p><%= message %></p>");
+  <% end %>
+<% else %>
+  $('#new_tweet input').val('');
+  $('.tweets').prepend("<%= escape_javascript(render @tweet) %>");
+  $('.tweet_alerts').append("<p>Tu tweet fue creado</p>");
+<% end %>

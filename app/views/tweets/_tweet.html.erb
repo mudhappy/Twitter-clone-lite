@@ -1,0 +1,5 @@
+<div>
+  <strong><%= link_to tweet.user.email, user_path(tweet.user_id) %></strong>
+  <%= tweet.created_at.strftime("%d %b %Y at %I:%M %p") %>
+  <p><%= tweet.body %></p>
+</div>
