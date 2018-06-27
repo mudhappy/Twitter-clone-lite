@@ -1,7 +1,11 @@
+<h3>Current User: <%= @tweets.first.user.email %></h3>
+<h3>Create New Tweet: <%= link_to "New Tweet", new_tweet_path %></h3>
+
 <ul>
-<% @tweets.each do |tweet| %>
-  <li>
-    <%= tweet.body %>
-  </li>
-<% end %>
+ <% @tweets.each do |tweet| %>
+ <strong><%= link_to tweet.user.email, user_path(tweet.user_id) %></strong>
+ <%= tweet.created_at.strftime("%d %b %Y at %I:%M %p") %>
+ <p><%= tweet.body %></p>
+ <br><br>
+ <% end %>
 </ul>
