@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :tweets
 
+  get 'hashtags/:name', to: 'hashtags#show'
+
   devise_scope :user do
     get 'login', to: 'devise/sessions#new'
   end
