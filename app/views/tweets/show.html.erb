@@ -1,1 +1,5 @@
-<%= render partial: 'tweets/tweet' %>
+<%= render partial: 'tweets/tweet', locals: { tweet: @tweet} %>
+
+<script type="text/javascript">
+  put_hashtags_and_mentions($(".tweet p"));
+</script>

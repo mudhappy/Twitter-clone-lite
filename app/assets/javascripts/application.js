@@ -14,3 +14,21 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+function replace_hashtag_link(str){
+  return str.replace(/\B#([\w-]+)/ig, '<a href="./hashtags/$1">$&</a>');
+}
+
+function replace_mention_link(str){
+  return str.replace(/\B@([\w-]+)/ig, '<a href="./users/$1">$&</a>');
+}
+
+function put_hashtags_and_mentions(element){
+  element.text(function()
+  {
+    let tweet = $(this);
+    let body = replace_hashtag_link(tweet.text());
+    body = replace_mention_link(body);
+    tweet.html(body);
+  });
+};

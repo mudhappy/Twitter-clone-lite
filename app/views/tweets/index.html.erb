@@ -4,6 +4,13 @@
 
 <ul class="tweets">
   <% @tweets.each do |tweet| %>
-    <%= render partial: 'tweets/tweet', locals: {tweet: tweet} %>
+    <%= render partial: 'tweets/tweet', locals: { tweet: tweet } %>
   <% end %>
 </ul>
+
+<script type="text/javascript">
+  $(function()
+  {
+    put_hashtags_and_mentions($(".tweets p"));
+  });
+</script>

@@ -8,4 +8,5 @@ $('.tweet_alerts').html('');
   $('#new_tweet input').val('');
   $('.tweets').prepend("<%= escape_javascript(render @tweet) %>");
   $('.tweet_alerts').append("<p>Tu tweet fue creado</p>");
+  put_hashtags_and_mentions($(".tweets p"));
 <% end %>

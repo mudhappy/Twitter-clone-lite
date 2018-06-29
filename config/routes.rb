@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'tweets#index'
+
   devise_for :users
   resources :users, only: [:show]
   resources :tweets
@@ -6,6 +8,4 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'login', to: 'devise/sessions#new'
   end
-
-  root 'tweets#index'
 end

@@ -1,5 +1,8 @@
-<div>
-  <strong><%= link_to "@#{tweet.user.username}", user_path(tweet.user) %></strong>
-  <%= tweet.created_at.strftime("%d %b %Y at %I:%M %p") %>
+<div class="tweet">
+  <h6>
+    <%= link_to "@#{tweet.user.username}", user_path(tweet.user) %>
+    <%= tweet.created_at.strftime("%d %b %Y at %I:%M %p") %>
+  </h6>
   <p><%= tweet.body %></p>
+  <%= link_to "Ver tweet", tweet_path(tweet) %>
 </div>
