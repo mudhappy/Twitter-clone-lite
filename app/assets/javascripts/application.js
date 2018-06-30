@@ -32,3 +32,12 @@ function put_hashtags_and_mentions(element){
     tweet.html(body);
   });
 };
+
+$(function () {
+
+  $(".app_messages").on("click", "p", function()
+  {
+    $(this).fadeOut(400);
+  });
+
+});

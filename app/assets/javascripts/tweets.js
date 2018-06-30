@@ -26,6 +26,10 @@ $(function () {
           button_twittea.prop('disabled', false);
         }
     });
-  }
 
+    $(".tweet_alerts").on("click", "p", function()
+    {
+      $(this).fadeOut(400);
+    });
+  }
 });

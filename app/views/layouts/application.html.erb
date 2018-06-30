@@ -9,8 +9,10 @@
   </head>
 
   <body>
-    <p><%= notice %></p>
-    <p><%= alert %></p>
+    <div class="app_messages">
+      <p class="notice <%= " none " if notice.nil? %>"><%= notice %></p>
+      <p class="alert <%= " none " if alert.nil? %>"><%= alert %></p>
+    </div>
     <%= yield %>
   </body>
 </html>
