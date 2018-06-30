@@ -20,7 +20,7 @@ function replace_hashtag_link(str){
 }
 
 function replace_mention_link(str){
-  return str.replace(/@(\w*[0-9a-zA-Z]+\w*[0-9a-zA-Z])/ig, `<a href="/users/$1">$&</a>`);
+  return str.replace(/@(\w*[0-9a-zA-Z]+\w*[0-9a-zA-Z])/ig, `<a href="/$1">$&</a>`);
 }
 
 function put_hashtags_and_mentions(element){

@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  extend FriendlyId
+
   attr_writer :login
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -6,12 +8,17 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          authentication_keys: [:login]
 
+  # Validations
   validates :name, presence: true
   validates :username, presence: true, uniqueness: { case_sensitive: false }
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, multiline: true
   validate :validate_username
 
+  # Asociations
   has_many :tweets
+
+  # Slug
+  friendly_id :username, use: :slugged
 
   def login
     @login || self.username || self.email
@@ -31,5 +38,4 @@ class User < ApplicationRecord
       errors.add(:username, :invalid)
     end
   end
-
 end

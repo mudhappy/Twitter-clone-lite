@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
-  root 'tweets#index'
-
+  # Users
   devise_for :users
-  resources :users, only: [:show]
+
+  # Tweet
+  root 'tweets#index'
   resources :tweets
 
+  # Hashtags
   get 'hashtags/:name', to: 'hashtags#show'
 
-  devise_scope :user do
-    get 'login', to: 'devise/sessions#new'
-  end
+  # User
+  get '/:id', to: 'users#show', as: 'user'
 end
