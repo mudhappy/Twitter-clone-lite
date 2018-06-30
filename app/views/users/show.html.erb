@@ -1,6 +1,17 @@
-<h1>Perfil de <%= @user.name %></h1>
-<h3>Tweets:</h3>
+<div class="user-card">
+  <header class="user-card__header">
+    <div class="user-card__avatar">
+      <img src="<%= @user.avatar %>">
+    </div>
+    <h1 class="user-card__name">Perfil de <%= @user.name %></h1>
+  </header>
+  <div class="user-card__details">
+    <span class="user-card__username">@<%= link_to @user.username, @user %></span>
+    <span class="user-card__join">Se unió en <%= @user.created_at.strftime("%B del %Y") %></span>
+  </div>
+</div>
 <ul class="tweets">
+  <h3>Tweets (<%= @tweets.size %>)</h3>
   <% @tweets.each do |tweet| %>
     <%= render partial: 'tweets/tweet', locals: { tweet: tweet } %>
   <% end %>
