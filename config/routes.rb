@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
   # Tweet
   root 'tweets#index'
-  resources :tweets
+  get 'tweets/:random_string_id', to: 'tweets#show', as: :tweet
+  resources :tweets, except: [:show]
 
   # Hashtags
   get 'hashtags/:name', to: 'hashtags#show'

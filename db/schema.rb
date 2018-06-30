@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180629235220) do
+ActiveRecord::Schema.define(version: 20180630023826) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 20180629235220) do
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "random_string_id"
+    t.index ["random_string_id"], name: "index_tweets_on_random_string_id"
     t.index ["user_id"], name: "index_tweets_on_user_id"
   end
 

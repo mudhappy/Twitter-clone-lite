@@ -4,5 +4,5 @@
     <%= tweet.created_at.strftime("%d %b %Y at %I:%M %p") %>
   </h6>
   <p><%= tweet.body %></p>
-  <%= link_to "Ver tweet", tweet_path(tweet) %>
+  <%= link_to "Ver tweet", tweet_path(tweet.random_string_id) %>
 </div>

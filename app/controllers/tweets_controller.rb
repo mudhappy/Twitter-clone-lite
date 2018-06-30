@@ -24,7 +24,7 @@ class TweetsController < ApplicationController
   end
 
   def show
-    @tweet = Tweet.find(params[:id])
+    @tweet = Tweet.find_by(random_string_id: params[:random_string_id])
     @user = @tweet.user
   end
 

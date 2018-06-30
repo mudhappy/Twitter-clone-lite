@@ -8,6 +8,7 @@ class Tweet < ApplicationRecord
 
   # Callbacks
   after_create :make_hashtags
+  before_create :randomize_id
 
   private
 
@@ -18,5 +19,11 @@ class Tweet < ApplicationRecord
       hashtag = Hashtag.find_or_create_by(name: h.first.downcase)
       self.hashtags << hashtag
     end
+  end
+
+  def randomize_id
+    begin
+      self.random_string_id = SecureRandom.hex
+    end while Tweet.where(id: self.random_string_id).exists?
   end
 end
