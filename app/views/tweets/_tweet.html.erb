@@ -1,8 +1,19 @@
 <div class="tweet">
-  <h6>
-    <%= link_to "@#{tweet.user.username}", user_path(tweet.user) %>
-    <%= tweet.created_at.strftime("%d %b %Y at %I:%M %p") %>
-  </h6>
-  <p><%= tweet.body %></p>
-  <%= link_to "Ver tweet", tweet_path(tweet.random_string_id) %>
+  <header class="tweet__header">
+    <%= link_to user_path(tweet.user), class: "tweet-account" do %>
+      <img class="tweet-account__avatar" src="">
+      <span class="tweet-account__fullname">
+        <%= "#{tweet.user.name}" %>
+      </span>
+      <span class="tweet-account__username">
+        <%= "@#{tweet.user.username}" %>
+      </span>
+    <% end %>
+    <small class="tweet__time">
+      <%= time_ago_in_words(tweet.created_at) %>
+    </small>
+  </header>
+  <div class="tweet__content">
+    <p><%= tweet.body %></p>
+  </div>
 </div>

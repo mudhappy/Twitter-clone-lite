@@ -16,11 +16,11 @@
 //= require_tree .
 
 function replace_hashtag_link(str){
-  return str.replace(/#(\w*[0-9a-zA-Z]+\w*[0-9a-zA-Z])/ig, `<a href="/hashtags/$1">$&</a>`);
+  return str.replace(/#(\w*[0-9a-zA-Z]+\w*[0-9a-zA-Z])/ig, `<a class="hashtag" href="/hashtags/$1">$&</a>`);
 }
 
 function replace_mention_link(str){
-  return str.replace(/@(\w*[0-9a-zA-Z]+\w*[0-9a-zA-Z])/ig, `<a href="/$1">$&</a>`);
+  return str.replace(/@(\w*[0-9a-zA-Z]+\w*[0-9a-zA-Z])/ig, `<a class="mention" href="/$1">$&</a>`);
 }
 
 function put_hashtags_and_mentions(element){

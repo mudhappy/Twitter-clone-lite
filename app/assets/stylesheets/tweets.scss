@@ -1,3 +1,63 @@
 // Place all the styles related to the Tweets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.tweet
+{
+  border-bottom: 1px solid #e6ecf0;
+  position: relative;
+  min-height: 51px;
+  padding: 9px 12px;
+  background: #fff;
+  border-left: 1px solid #e6ecf0;
+  border-right: 1px solid #e6ecf0;
+
+  &__header:hover
+  {
+    .tweet-account__fullname
+    {
+      color: rgb(29, 161, 242);
+      text-decoration: underline;
+    }
+  }
+
+  &__content
+  {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  
+  &__time
+  {
+    font-size: 14px;
+    color: #657786;
+    &:before
+    {
+      content: "\00b7";
+    }
+  }
+}
+
+.tweet-account
+{
+  text-decoration: none;
+  position: relative;
+
+  &__avatar
+  {
+    position: absolute;
+  }
+
+  &__fullname
+  {
+    color: #14171a;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  &__username
+  {
+    font-size: 14px;
+    color: #657786;
+  }
+}
