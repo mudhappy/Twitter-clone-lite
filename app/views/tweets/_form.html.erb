@@ -5,6 +5,9 @@
     </div>
     <%= f.text_area :body, placeholder: "¿Que está pasando?", autocomplete: 'off' %>
   </div>
-  <%= f.submit "Twittear", class: "button-primary" %>
+  <div class="new-tweet__actions">
+    <div class="new-tweet__counter">280</div>
+    <%= f.submit "Twittear", id: "button-twittea",class: "button-primary" %>
+  </div>
   <div class="tweet_alerts"></div>
 <% end %>

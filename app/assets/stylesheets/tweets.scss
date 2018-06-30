@@ -77,6 +77,18 @@
     position: relative;
     overflow: hidden;
   }
+
+  &__actions
+  {
+    text-align: right;
+    display: block;
+  }
+
+  &__counter
+  {
+    display: inline-block;
+    margin: 0 5px;
+  }
   
   &__avatar
   {
@@ -114,6 +126,19 @@
     }
   }
 } 
+
+.new-tweet.invalid
+{
+  #button-twittea
+  {
+    opacity: .5;
+    cursor: not-allowed;
+  }
+  .new-tweet__counter
+  {
+    color: red;
+  }
+}
 
 .button-primary
 {

@@ -5,8 +5,10 @@ $('.tweet_alerts').html('');
     $('.tweet_alerts').append("<p><%= message %></p>");
   <% end %>
 <% else %>
-  $('#new_tweet input').val('');
-  $('.tweets').prepend("<%= escape_javascript(render @tweet) %>");
+  $('#new_tweet textarea').val('');
+  $("<%= escape_javascript(render @tweet) %>").hide().prependTo('.tweets').fadeIn(1000);;
   $('.tweet_alerts').append("<p>Tu tweet fue creado</p>");
+
   put_hashtags_and_mentions($(".tweets p"));
+  $(".new-tweet__counter").text('280');
 <% end %>
