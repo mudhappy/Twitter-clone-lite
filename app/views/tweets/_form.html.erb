@@ -1,8 +1,10 @@
-<%= form_for @tweet, remote: true, html: { id: 'new_tweet'} do |f| %>
-  <div>
+<%= form_for @tweet, remote: true, html: { class: 'new-tweet'} do |f| %>
+  <div class="new-tweet__content">
+    <div class="new-tweet__avatar">
+      <img src="http://lorempixel.com/output/animals-q-c-150-150-7.jpg">
+    </div>
     <%= f.text_area :body, placeholder: "¿Que está pasando?", autocomplete: 'off' %>
-    <small>Solo 280 carácteres</small>
   </div>
-  <%= f.submit "Twittea" %>
+  <%= f.submit "Twittear", class: "button-primary" %>
   <div class="tweet_alerts"></div>
 <% end %>
