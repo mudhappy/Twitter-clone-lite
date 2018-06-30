@@ -1,7 +1,7 @@
 <%= form_for @tweet, remote: true, html: { class: 'new-tweet'} do |f| %>
   <div class="new-tweet__content">
     <div class="new-tweet__avatar">
-      <img src="http://lorempixel.com/output/animals-q-c-150-150-7.jpg">
+      <img src="<%=current_user.avatar %>">
     </div>
     <%= f.text_area :body, placeholder: "¿Que está pasando?", autocomplete: 'off' %>
   </div>

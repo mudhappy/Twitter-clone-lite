@@ -20,6 +20,9 @@ class User < ApplicationRecord
   # Slug
   friendly_id :username, use: :slugged
 
+  # Callbacks
+  before_create :randomize_avatar
+
   def login
     @login || self.username || self.email
   end
@@ -37,5 +40,11 @@ class User < ApplicationRecord
     if User.where(email: username).exists?
       errors.add(:username, :invalid)
     end
+  end
+
+  private
+
+  def randomize_avatar
+    self.avatar = "https://api.adorable.io/avatars/150/#{self.email}.png"
   end
 end

@@ -7,17 +7,29 @@
   border-bottom: 1px solid #e6ecf0;
   position: relative;
   min-height: 51px;
-  padding: 9px 12px;
   background: #fff;
   border-left: 1px solid #e6ecf0;
   border-right: 1px solid #e6ecf0;
+  padding: 9px 12px 15px 60px;
+  padding-left: 60px;
 
-  &__header:hover
+  &:hover
   {
-    .tweet-account__fullname
+    background: #f5f8fa;
+  }
+
+  &__header
+  {
+    position: relative;
+    display: inline-block;
+
+    &:hover
     {
-      color: rgb(29, 161, 242);
-      text-decoration: underline;
+      .tweet-account__fullname
+      {
+        color: rgb(29, 161, 242);
+        text-decoration: underline;
+      }
     }
   }
 
@@ -46,6 +58,10 @@
   &__avatar
   {
     position: absolute;
+    width: 40px;
+    border-radius: 50%;
+    top: 0;
+    left: -50px;
   }
 
   &__fullname
@@ -95,7 +111,7 @@
     float: left;
     width: 60px;
     height: 60px;
-    text-align: center;
+    text-align: left;
 
     img
     {

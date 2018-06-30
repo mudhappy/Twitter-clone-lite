@@ -1,7 +1,7 @@
 <div class="tweet">
   <header class="tweet__header">
     <%= link_to user_path(tweet.user), class: "tweet-account" do %>
-      <img class="tweet-account__avatar" src="">
+      <img class="tweet-account__avatar" src="<%= tweet.user.avatar %>">
       <span class="tweet-account__fullname">
         <%= "#{tweet.user.name}" %>
       </span>
