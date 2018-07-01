@@ -13,6 +13,28 @@
       <p class="notice <%= " none " if notice.nil? %>"><%= notice %></p>
       <p class="alert <%= " none " if alert.nil? %>"><%= alert %></p>
     </div>
+    <header class="header">
+      <ul class="header__menu">
+        <li class="header__item">
+          <%= link_to "Inicio", root_path, class: "header__inicio header__link" %>
+        </li>
+        <% if current_user %>
+          <li class="header__item">
+          <%= link_to "Mi perfil", user_path(current_user), class: "header__perfil header__link" %>
+          </li>
+          <li class="header__item">
+            <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, class: "header__logout header__link" %>
+          </li>
+        <% else %>
+          <li class="header__item">
+            <%= link_to "Iniciar sesión", new_user_session_path, class: "header__login header__link" %>
+          </li>
+          <li class="header__item">
+            <%= link_to "Sobre el desarrollador", "https://adrianpadilla.me", class: "header__link" %>
+          </li>
+        <% end %>
+      </ul>
+    </header>
     <%= yield %>
   </body>
 </html>

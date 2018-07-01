@@ -33,11 +33,16 @@ function put_hashtags_and_mentions(element){
   });
 };
 
-$(function () {
+function activar_menu(element){
+  $(".menu__link").removeClass("active");
+  element.addClass("active");
+}
 
+$(function () {
+  
   $(".app_messages").on("click", "p", function()
   {
     $(this).fadeOut(400);
   });
-
+  
 });
