@@ -1,0 +1,23 @@
+<div class="auth_message container">
+  <p>
+    <%= link_to "Inicia sesión", new_user_session_path, class: "button-primary" %> o 
+    <%= link_to "Regístrate", new_user_registration_path, class: "button-secondary" %> 
+    para twittear
+  </p>
+</div>
+<ul class="tweets container">
+  <h3>
+    Última actividad
+    <% @hashtags.each do |h| %>
+      <%= link_to "##{h.name}", hashtag_path(h.name) %> 
+    <% end %>
+  </h3>
+  <% @tweets.each do |tweet| %>
+    <%= render partial: 'tweets/tweet', locals: { tweet: tweet } %>
+  <% end %>
+</ul>
+
+<script>
+  activar_menu($(".header__inicio"));
+  put_hashtags_and_mentions($(".tweets p"));
+</script>

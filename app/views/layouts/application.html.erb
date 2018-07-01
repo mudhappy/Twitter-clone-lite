@@ -14,7 +14,7 @@
       <p class="alert <%= " none " if alert.nil? %>"><%= alert %></p>
     </div>
     <header class="header">
-      <ul class="header__menu">
+      <ul class="header__menu container">
         <li class="header__item">
           <%= link_to "Inicio", root_path, class: "header__inicio header__link" %>
         </li>
@@ -27,10 +27,10 @@
           </li>
         <% else %>
           <li class="header__item">
-            <%= link_to "Iniciar sesión", new_user_session_path, class: "header__login header__link" %>
+            <%= link_to "Sobre el desarrollador", "https://adrianpadilla.me", class: "header__link" %>
           </li>
           <li class="header__item">
-            <%= link_to "Sobre el desarrollador", "https://adrianpadilla.me", class: "header__link" %>
+            <%= link_to "Source Code", "https://adrianpadilla.me", class: "header__link" %>
           </li>
         <% end %>
       </ul>

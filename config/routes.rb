@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  unauthenticated :user do
+    root 'users#unauthenticated_landing'
+  end
+
   # Users
   devise_for :users
 
@@ -8,7 +13,7 @@ Rails.application.routes.draw do
   resources :tweets, except: [:show]
 
   # Hashtags
-  get 'hashtags/:name', to: 'hashtags#show'
+  get 'hashtags/:name', to: 'hashtags#show', as: 'hashtag'
 
   # User
   get '/:id', to: 'users#show', as: 'user'

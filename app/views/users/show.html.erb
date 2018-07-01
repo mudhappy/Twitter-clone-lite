@@ -1,4 +1,4 @@
-<div class="user-card">
+<div class="user-card container">
   <header class="user-card__header">
     <div class="user-card__avatar">
       <img src="<%= @user.avatar %>">
@@ -10,7 +10,7 @@
     <span class="user-card__join">Se unió en <%= @user.created_at.strftime("%B del %Y") %></span>
   </div>
 </div>
-<ul class="tweets">
+<ul class="tweets container">
   <h3>Tweets (<%= @tweets.size %>)</h3>
   <% @tweets.each do |tweet| %>
     <%= render partial: 'tweets/tweet', locals: { tweet: tweet } %>

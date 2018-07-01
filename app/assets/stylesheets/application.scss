@@ -114,8 +114,6 @@ background-color: #e6ecf0;
   &__menu
   {
     overflow: hidden;
-    width: 90%;
-    margin: 0 auto;
   }
 
   &__item
@@ -131,7 +129,7 @@ background-color: #e6ecf0;
   {
     text-decoration: none;
     font-weight: bold;
-    line-height: 40px;
+    line-height: 50px;
     display: block;
     padding: 0 15px;
     border-bottom: 2px solid transparent;
@@ -144,4 +142,16 @@ background-color: #e6ecf0;
       border-bottom: 2px solid #1DA1F2;
     }
   }
+}
+
+#error_explanation h2
+{
+  font-size: 16px;
+}
+
+.container
+{
+  width: 1000px;
+  max-width: 95%;
+  margin: 0 auto;
 }

@@ -1,4 +1,4 @@
-<ul class="tweets">
+<ul class="tweets container">
   <% @tweets.each do |tweet| %>
     <%= render partial: 'tweets/tweet', locals: { tweet: tweet } %>
   <% end %>
