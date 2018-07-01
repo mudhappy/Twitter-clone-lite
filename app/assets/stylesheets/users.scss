@@ -5,8 +5,8 @@
 .user-card
 {
   background: white;
-  padding: 10px;
-  padding-left: 100px;
+  padding: 18px;
+  padding-left: 106px;
   position: relative;
   min-height: 100px;
 
@@ -57,7 +57,7 @@
 .tweets h3
 {
   background: white;
-  padding: 9px 12px;
+  padding: 11px 19px;
   font-weight: bold;
   font-size: 16px;
   border-bottom: 1px solid #e6ecf0;
@@ -69,6 +69,11 @@
     text-decoration: none;
     font-size: 14px;
     color: #1da1f2;
+
+    &:hover
+    {
+      text-decoration: underline;
+    }
   }
 }
 
@@ -80,10 +85,19 @@
   p
   {
     margin: auto;
+    font-size: 18px;
   }
   .button-secondary
   {
     color: #14171a;
+  }
+  .button-primary
+  {
+    padding: 8px 20px;
+  }
+  a
+  {
+    font-size: 18px;
   }
 }
 
