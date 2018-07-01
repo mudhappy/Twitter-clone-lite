@@ -1,4 +1,10 @@
+<header class="header-hashtag">
+  <div class="container">
+    <h1><%= "##{@hashtag.name}" %></h1>
+  </div>
+</header>
 <ul class="tweets container">
+  <h3>Tweets (<%= @tweets.size %>)</h3>
   <% @tweets.each do |tweet| %>
     <%= render partial: 'tweets/tweet', locals: { tweet: tweet } %>
   <% end %>

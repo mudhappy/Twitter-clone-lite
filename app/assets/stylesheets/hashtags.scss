@@ -13,3 +13,25 @@
     text-decoration: underline;
   }
 }
+
+.header-hashtag
+{
+  background: #1da1f2;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  min-height: 60px;
+  line-height: 28px;
+  display: flex;
+
+  h1
+  {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .container
+  {
+    margin: auto;
+  }
+}
