@@ -4,7 +4,7 @@ class Tweet < ApplicationRecord
   belongs_to :user
 
   # Validations
-  validates :body, length: { minimum: 1, maximum: 280 }
+  validates :body, presence: true, length: { minimum: 1, maximum: 280 }
 
   # Callbacks
   after_create :make_hashtags
@@ -13,7 +13,7 @@ class Tweet < ApplicationRecord
   private
 
   def make_hashtags
-    hashtags = body.scan(/#(\w*[0-9a-zA-Z]+\w*[0-9a-zA-Z])/m)
+    hashtags = body.scan(/#(\w*[0-9a-zA-ZñÑáéíóúÁÉÍÓÚ]+\w*[0-9a-zA-Z])/m)
 
     hashtags.map do |h|
       hashtag = Hashtag.find_or_create_by(name: h.first.downcase)
@@ -24,6 +24,6 @@ class Tweet < ApplicationRecord
   def randomize_id
     begin
       self.random_string_id = SecureRandom.hex
-    end while Tweet.where(id: self.random_string_id).exists?
+    end while Tweet.where(random_string_id: self.random_string_id).exists?
   end
 end
