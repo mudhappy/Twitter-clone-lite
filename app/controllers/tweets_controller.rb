@@ -14,11 +14,9 @@ class TweetsController < ApplicationController
     @tweet = current_user.tweets.new(tweet_params)
     respond_to do |format|
       if @tweet.save
-        head(:created)
         format.js
         format.json { render json: @tweet }
       else
-        head(:unprocessable_entity)
         format.js
         format.json { render json: @tweet.errors, status: :unprocessable_entity }
       end

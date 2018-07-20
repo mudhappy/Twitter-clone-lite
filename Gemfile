@@ -35,6 +35,12 @@ gem 'friendly_id', '~> 5.1.0'
 
 gem 'pg', group: :production
 
+group :test do
+  gem 'capybara', '~> 2.13'
+  gem 'selenium-webdriver'
+  gem 'chromedriver-helper'
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

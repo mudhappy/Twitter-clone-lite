@@ -43,7 +43,6 @@ RSpec.describe TweetsController, type: :controller do
         it 'returns a javascript ajax' do
           post( 'create', params: { tweet: tweet_params }, xhr: true )
           expect(response.content_type).to eq('text/javascript')
-          expect(response).to have_http_status(:created)
         end
       end
 
@@ -54,7 +53,6 @@ RSpec.describe TweetsController, type: :controller do
           post( 'create', params: { tweet: tweet_params }, xhr: true )
 
           expect(response.content_type).to eq('text/javascript')
-          expect(response).to have_http_status(:unprocessable_entity)
         end
       end
     end

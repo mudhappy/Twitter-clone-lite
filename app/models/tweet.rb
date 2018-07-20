@@ -4,7 +4,7 @@ class Tweet < ApplicationRecord
   belongs_to :user
 
   # Validations
-  validates :body, presence: true, length: { minimum: 1, maximum: 280 }
+  validates :body, presence: true, length: { maximum: 280 }
 
   # Callbacks
   after_create :make_hashtags
